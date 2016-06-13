@@ -12,6 +12,7 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <GPUImage.h>
 #import <MBProgressHUD.h>
+#import "FilterChooseView.h"
 
 @interface PlayViewController ()
 {
@@ -34,7 +35,7 @@
     NSString* videoName = @"MixedVideo.mov";
     
     NSString *exportPath = [NSTemporaryDirectory() stringByAppendingPathComponent:videoName];
-//    
+//
 //    _moviePlayer = [[MPMoviePlayerController alloc] init];
 //    _moviePlayer.view.frame = CGRectMake(self.view.bounds.origin.x,self.view.bounds.origin.y+64, self.view.bounds.size.width, self.view.bounds.size.height/2);
 //    _moviePlayer.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
@@ -47,12 +48,7 @@
     filterView = [[GPUImageView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x,self.view.bounds.origin.y+64, self.view.bounds.size.width, self.view.bounds.size.height/2)];
     filterView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:filterView];
-    
     movieFile = [[GPUImageMovie alloc] initWithURL:[NSURL fileURLWithPath:exportPath]];
-    
-    
-
-    
     //alloc fitler add fitler
     GPUImageFilter* fitler = [[GPUImageSepiaFilter alloc] init];
     [self setupFitler:fitler];
@@ -60,8 +56,25 @@
     //navgationRightitem saveitem to write video to phone ablum
     UIBarButtonItem *rightItem  =   [[UIBarButtonItem alloc]initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(fitlerBegain_click)];
     self.navigationItem.rightBarButtonItem  =   rightItem;
+    
+    
+    FilterChooseView * chooseView = [[FilterChooseView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(filterView.frame), self.view.frame.size.width, 100)];
+    chooseView.backback = ^(GPUImageFilter * filter){
+        [self choose_callBack:filter];
+    };
+    [self.view addSubview:chooseView];
 }
 
+#pragma mark 选择滤镜
+-(void)choose_callBack:(GPUImageFilter *)filter
+{
+    pixellateFilter = filter;
+    [movieFile cancelProcessing];
+    [movieFile removeAllTargets];
+    [movieFile addTarget:pixellateFilter];
+    [pixellateFilter addTarget:filterView];
+    [movieFile startProcessing];
+}
 #pragma mark set fitler and movieFile
 - (void)setupFitler:(GPUImageFilter*)fitler{
     pixellateFilter =   fitler;
@@ -69,7 +82,7 @@
     [movieFile removeAllTargets];
     [movieFile addTarget:pixellateFilter];
     [pixellateFilter addTarget:filterView];
-    movieFile.playAtActualSpeed = YES;
+//    movieFile.playAtActualSpeed = YES;
     movieFile.shouldRepeat = YES;
     [movieFile startProcessing];
 }
@@ -78,7 +91,6 @@
 #pragma mark 开始合成视频
 -(void)fitlerBegain_click
 {
-
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         

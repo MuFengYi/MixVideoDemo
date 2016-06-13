@@ -39,7 +39,7 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (_backback) {
-        GPUImageOutput<GPUImageInput> * pixellateFilter = (GPUImageOutput<GPUImageInput> *)[_filterArr[indexPath.row] objectForKey:@"filter"];
+        GPUImageFilter * pixellateFilter = (GPUImageFilter *)[_filterArr[indexPath.row] objectForKey:@"filter"];
         _backback(pixellateFilter);
     }
 //    [collectionView reloadItemsAtIndexPaths:@[indexPath]];

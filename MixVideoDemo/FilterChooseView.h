@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "GPUImage.h"
 
-typedef void(^callBackFilter)(GPUImageOutput<GPUImageInput> * filter);
+typedef void(^callBackFilter)(GPUImageFilter * filter);
 
 @interface FilterChooseView : UIView
 

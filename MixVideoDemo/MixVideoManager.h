@@ -14,7 +14,6 @@ typedef NS_ENUM(NSUInteger , Mixtype){
     MixText,
     MixAnimation,
     MixBorder,
-    MixTrim,
 };
 
 
