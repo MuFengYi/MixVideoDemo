@@ -19,6 +19,7 @@
 		2D5F47781D02E6CA005F5E46 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F47771D02E6CA005F5E46 /* PlayViewController.m */; };
 		2D92A4A71D043D3800E5FB67 /* start.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D92A4A61D043D3800E5FB67 /* start.png */; };
 		2D92A4D01D04666200E5FB67 /* MixVideoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D92A4CF1D04666200E5FB67 /* MixVideoManager.m */; };
+		F84635E248A1E38EF601CE45 /* libPods-MixVideoDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66E6693D6DB660EF8A41307F /* libPods-MixVideoDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		2D92A4A61D043D3800E5FB67 /* start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start.png; sourceTree = "<group>"; };
 		2D92A4CE1D04666200E5FB67 /* MixVideoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MixVideoManager.h; sourceTree = "<group>"; };
 		2D92A4CF1D04666200E5FB67 /* MixVideoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MixVideoManager.m; sourceTree = "<group>"; };
+		66E6693D6DB660EF8A41307F /* libPods-MixVideoDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MixVideoDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8660F264B9E19E98D5969BFF /* Pods-MixVideoDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MixVideoDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MixVideoDemo/Pods-MixVideoDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		8F20881A7BA973E1D5C77C7C /* Pods-MixVideoDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MixVideoDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MixVideoDemo/Pods-MixVideoDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -50,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F84635E248A1E38EF601CE45 /* libPods-MixVideoDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +122,7 @@
 		DFC2654B8F6656B11B13F4B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				66E6693D6DB660EF8A41307F /* libPods-MixVideoDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -157,6 +161,7 @@
 				TargetAttributes = {
 					2D5F47541D02BB01005F5E46 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = Z99H26Q7BL;
 					};
 				};
 			};
@@ -366,6 +371,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MixVideoDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -375,6 +381,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = bfy.MixVideoDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -384,6 +391,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MixVideoDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -393,6 +401,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = bfy.MixVideoDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
