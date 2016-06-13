@@ -1,0 +1,423 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2D48831C1D05C95E00AA9E24 /* VideoStopButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D48831B1D05C95E00AA9E24 /* VideoStopButton.m */; };
+		2D5F475A1D02BB01005F5E46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F47591D02BB01005F5E46 /* main.m */; };
+		2D5F475D1D02BB01005F5E46 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F475C1D02BB01005F5E46 /* AppDelegate.m */; };
+		2D5F47601D02BB01005F5E46 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F475F1D02BB01005F5E46 /* ViewController.m */; };
+		2D5F47631D02BB01005F5E46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D5F47611D02BB01005F5E46 /* Main.storyboard */; };
+		2D5F47651D02BB01005F5E46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D5F47641D02BB01005F5E46 /* Assets.xcassets */; };
+		2D5F47681D02BB01005F5E46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D5F47661D02BB01005F5E46 /* LaunchScreen.storyboard */; };
+		2D5F47701D02BB3A005F5E46 /* MixVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D5F476F1D02BB3A005F5E46 /* MixVideo.mp4 */; };
+		2D5F47751D02E2AD005F5E46 /* sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D5F47741D02E2AD005F5E46 /* sample.mp3 */; };
+		2D5F47781D02E6CA005F5E46 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F47771D02E6CA005F5E46 /* PlayViewController.m */; };
+		2D92A4A71D043D3800E5FB67 /* start.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D92A4A61D043D3800E5FB67 /* start.png */; };
+		2D92A4D01D04666200E5FB67 /* MixVideoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D92A4CF1D04666200E5FB67 /* MixVideoManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2D48831A1D05C95E00AA9E24 /* VideoStopButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoStopButton.h; sourceTree = "<group>"; };
+		2D48831B1D05C95E00AA9E24 /* VideoStopButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoStopButton.m; sourceTree = "<group>"; };
+		2D5F47551D02BB01005F5E46 /* MixVideoDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MixVideoDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D5F47591D02BB01005F5E46 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2D5F475B1D02BB01005F5E46 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2D5F475C1D02BB01005F5E46 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2D5F475E1D02BB01005F5E46 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2D5F475F1D02BB01005F5E46 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2D5F47621D02BB01005F5E46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2D5F47641D02BB01005F5E46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2D5F47671D02BB01005F5E46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2D5F47691D02BB01005F5E46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D5F476F1D02BB3A005F5E46 /* MixVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = MixVideo.mp4; sourceTree = "<group>"; };
+		2D5F47741D02E2AD005F5E46 /* sample.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sample.mp3; sourceTree = "<group>"; };
+		2D5F47761D02E6CA005F5E46 /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
+		2D5F47771D02E6CA005F5E46 /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
+		2D92A4A61D043D3800E5FB67 /* start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start.png; sourceTree = "<group>"; };
+		2D92A4CE1D04666200E5FB67 /* MixVideoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MixVideoManager.h; sourceTree = "<group>"; };
+		2D92A4CF1D04666200E5FB67 /* MixVideoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MixVideoManager.m; sourceTree = "<group>"; };
+		8660F264B9E19E98D5969BFF /* Pods-MixVideoDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MixVideoDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MixVideoDemo/Pods-MixVideoDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		8F20881A7BA973E1D5C77C7C /* Pods-MixVideoDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MixVideoDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MixVideoDemo/Pods-MixVideoDemo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2D5F47521D02BB01005F5E46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2D5F474C1D02BB01005F5E46 = {
+			isa = PBXGroup;
+			children = (
+				2D5F47571D02BB01005F5E46 /* MixVideoDemo */,
+				2D5F47561D02BB01005F5E46 /* Products */,
+				6AD5BA64A0565115F38E2293 /* Pods */,
+				DFC2654B8F6656B11B13F4B3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2D5F47561D02BB01005F5E46 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2D5F47551D02BB01005F5E46 /* MixVideoDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2D5F47571D02BB01005F5E46 /* MixVideoDemo */ = {
+			isa = PBXGroup;
+			children = (
+				2D5F475B1D02BB01005F5E46 /* AppDelegate.h */,
+				2D5F475C1D02BB01005F5E46 /* AppDelegate.m */,
+				2D5F475E1D02BB01005F5E46 /* ViewController.h */,
+				2D5F475F1D02BB01005F5E46 /* ViewController.m */,
+				2D92A4CE1D04666200E5FB67 /* MixVideoManager.h */,
+				2D92A4CF1D04666200E5FB67 /* MixVideoManager.m */,
+				2D5F47761D02E6CA005F5E46 /* PlayViewController.h */,
+				2D5F47771D02E6CA005F5E46 /* PlayViewController.m */,
+				2D48831A1D05C95E00AA9E24 /* VideoStopButton.h */,
+				2D48831B1D05C95E00AA9E24 /* VideoStopButton.m */,
+				2D5F47611D02BB01005F5E46 /* Main.storyboard */,
+				2D5F47641D02BB01005F5E46 /* Assets.xcassets */,
+				2D92A4A61D043D3800E5FB67 /* start.png */,
+				2D5F476F1D02BB3A005F5E46 /* MixVideo.mp4 */,
+				2D5F47741D02E2AD005F5E46 /* sample.mp3 */,
+				2D5F47661D02BB01005F5E46 /* LaunchScreen.storyboard */,
+				2D5F47691D02BB01005F5E46 /* Info.plist */,
+				2D5F47581D02BB01005F5E46 /* Supporting Files */,
+			);
+			path = MixVideoDemo;
+			sourceTree = "<group>";
+		};
+		2D5F47581D02BB01005F5E46 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2D5F47591D02BB01005F5E46 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6AD5BA64A0565115F38E2293 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8660F264B9E19E98D5969BFF /* Pods-MixVideoDemo.debug.xcconfig */,
+				8F20881A7BA973E1D5C77C7C /* Pods-MixVideoDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DFC2654B8F6656B11B13F4B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2D5F47541D02BB01005F5E46 /* MixVideoDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D5F476C1D02BB01005F5E46 /* Build configuration list for PBXNativeTarget "MixVideoDemo" */;
+			buildPhases = (
+				D5A1F9075593E7A1059E94B1 /* [CP] Check Pods Manifest.lock */,
+				2D5F47511D02BB01005F5E46 /* Sources */,
+				2D5F47521D02BB01005F5E46 /* Frameworks */,
+				2D5F47531D02BB01005F5E46 /* Resources */,
+				3BE4F44B7FB91056626BC1FE /* [CP] Embed Pods Frameworks */,
+				69AC3C949599048BBF9D9746 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MixVideoDemo;
+			productName = MixVideoDemo;
+			productReference = 2D5F47551D02BB01005F5E46 /* MixVideoDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2D5F474D1D02BB01005F5E46 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = bfy;
+				TargetAttributes = {
+					2D5F47541D02BB01005F5E46 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 2D5F47501D02BB01005F5E46 /* Build configuration list for PBXProject "MixVideoDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2D5F474C1D02BB01005F5E46;
+			productRefGroup = 2D5F47561D02BB01005F5E46 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2D5F47541D02BB01005F5E46 /* MixVideoDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2D5F47531D02BB01005F5E46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D5F47701D02BB3A005F5E46 /* MixVideo.mp4 in Resources */,
+				2D92A4A71D043D3800E5FB67 /* start.png in Resources */,
+				2D5F47681D02BB01005F5E46 /* LaunchScreen.storyboard in Resources */,
+				2D5F47651D02BB01005F5E46 /* Assets.xcassets in Resources */,
+				2D5F47631D02BB01005F5E46 /* Main.storyboard in Resources */,
+				2D5F47751D02E2AD005F5E46 /* sample.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3BE4F44B7FB91056626BC1FE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MixVideoDemo/Pods-MixVideoDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69AC3C949599048BBF9D9746 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MixVideoDemo/Pods-MixVideoDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5A1F9075593E7A1059E94B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2D5F47511D02BB01005F5E46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D5F47601D02BB01005F5E46 /* ViewController.m in Sources */,
+				2D5F475D1D02BB01005F5E46 /* AppDelegate.m in Sources */,
+				2D5F47781D02E6CA005F5E46 /* PlayViewController.m in Sources */,
+				2D92A4D01D04666200E5FB67 /* MixVideoManager.m in Sources */,
+				2D5F475A1D02BB01005F5E46 /* main.m in Sources */,
+				2D48831C1D05C95E00AA9E24 /* VideoStopButton.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2D5F47611D02BB01005F5E46 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2D5F47621D02BB01005F5E46 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2D5F47661D02BB01005F5E46 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2D5F47671D02BB01005F5E46 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2D5F476A1D02BB01005F5E46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2D5F476B1D02BB01005F5E46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2D5F476D1D02BB01005F5E46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8660F264B9E19E98D5969BFF /* Pods-MixVideoDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = MixVideoDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MixVideoDemo",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = bfy.MixVideoDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2D5F476E1D02BB01005F5E46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F20881A7BA973E1D5C77C7C /* Pods-MixVideoDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = MixVideoDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MixVideoDemo",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = bfy.MixVideoDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D5F47501D02BB01005F5E46 /* Build configuration list for PBXProject "MixVideoDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D5F476A1D02BB01005F5E46 /* Debug */,
+				2D5F476B1D02BB01005F5E46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D5F476C1D02BB01005F5E46 /* Build configuration list for PBXNativeTarget "MixVideoDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D5F476D1D02BB01005F5E46 /* Debug */,
+				2D5F476E1D02BB01005F5E46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2D5F474D1D02BB01005F5E46 /* Project object */;
+}
