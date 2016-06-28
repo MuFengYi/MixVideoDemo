@@ -51,15 +51,17 @@
     NSDictionary * dic7 = [NSDictionary dictionaryWithObjectsAndKeys:Filter7,@"filter",title7,@"name", nil];
     [arr addObject:dic7];
     
-//    GPUImageOutput<GPUImageInput> * Filter8 = [[GPUImageGrayscaleFilter alloc] init];
-//    NSString * title8 = @"灰度";
-//    NSDictionary * dic8 = [NSDictionary dictionaryWithObjectsAndKeys:Filter8,@"filter",title8,@"name", nil];
-//    [arr addObject:dic8];
+    GPUImageOutput<GPUImageInput> * Filter8 = [[GPUImageGrayscaleFilter alloc] init];
+    NSString * title8 = @"灰度";
+    NSDictionary * dic8 = [NSDictionary dictionaryWithObjectsAndKeys:Filter8,@"filter",title8,@"name", nil];
+    [arr addObject:dic8];
     
-    //    GPUImageOutput<GPUImageInput> * Filter9 = [[GPUImageHistogramGenerator alloc] init];
-    //    NSString * title9 = @"色彩直方图？";
-    //    NSDictionary * dic9 = [NSDictionary dictionaryWithObjectsAndKeys:Filter9,@"filter",title9,@"name", nil];
+    GPUImageOutput<GPUImageInput> * Filter9 = [[GPUImageHistogramGenerator alloc] init];
+        NSString * title9 = @"色彩直方图？";
+        NSDictionary * dic9 = [NSDictionary dictionaryWithObjectsAndKeys:Filter9,@"filter",title9,@"name", nil];
     GPUImageOutput<GPUImageInput> * Filter10 = [[GPUImageRGBFilter alloc] init];
+    [arr addObject:dic9];
+    
     NSString * title10 = @"RGB";
     [(GPUImageRGBFilter *)Filter10 setRed:0.8];
     [(GPUImageRGBFilter *)Filter10 setGreen:0.3];

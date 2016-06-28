@@ -1,3 +1,4 @@
+
 //
 //  MixVideoManager.m
 //  MixVideoDemo
@@ -55,9 +56,7 @@
     
 
      //视频声音采集(也可不执行这段代码不采集视频音轨，合并后的视频文件将没有视频原来的声音)
-     
      AVMutableCompositionTrack *compositionVoiceTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
-     
      [compositionVoiceTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:([videoAsset tracksWithMediaType:AVMediaTypeAudio].count>0)?[videoAsset tracksWithMediaType:AVMediaTypeAudio].firstObject:nil atTime:kCMTimeZero error:nil];
     
     
@@ -104,7 +103,7 @@
         // 3.3 - Add instructions
         mainInstruction.layerInstructions = [NSArray arrayWithObjects:videolayerInstruction,nil];
         
-       mainCompositionInst = [AVMutableVideoComposition videoComposition];
+        mainCompositionInst = [AVMutableVideoComposition videoComposition];
         
         CGSize naturalSize;
         if(isVideoAssetPortrait_){
@@ -216,18 +215,12 @@
             [parentLayer addSublayer:videoLayer];
             
             mainCompositionInst.animationTool = [AVVideoCompositionCoreAnimationTool
-                                         videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:videoLayer inLayer:parentLayer];
-            
-            
-            
+                                        videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:videoLayer inLayer:parentLayer];
         }
-
-        
-       
     }
     
     //AVAssetExportSession用于合并文件，导出合并后文件，presetName文件的输出类型
-    AVAssetExportSession *assetExportSession = [[AVAssetExportSession alloc] initWithAsset:mixComposition presetName:AVAssetExportPresetHighestQuality];
+    AVAssetExportSession *assetExportSession = [[AVAssetExportSession alloc] initWithAsset:mixComposition presetName:AVAssetExportPresetMediumQuality];
     
     NSString *outPutPath = [NSTemporaryDirectory() stringByAppendingPathComponent:MIXEDVIDEONAME];
     //混合后的视频输出路径

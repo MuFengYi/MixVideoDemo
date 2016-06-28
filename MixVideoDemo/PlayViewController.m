@@ -23,6 +23,8 @@
     GPUImageMovieWriter * movieWriter;
     GPUImageView *filterView;//预览层 view
 }
+@property   (nonatomic,strong)AVPlayer    *avplayer ;
+
 @end
 
 @implementation PlayViewController
@@ -31,33 +33,27 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    
-    NSString* videoName = @"MixedVideo.mov";
-    
-    NSString *exportPath = [NSTemporaryDirectory() stringByAppendingPathComponent:videoName];
-//
-//    _moviePlayer = [[MPMoviePlayerController alloc] init];
-//    _moviePlayer.view.frame = CGRectMake(self.view.bounds.origin.x,self.view.bounds.origin.y+64, self.view.bounds.size.width, self.view.bounds.size.height/2);
-//    _moviePlayer.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-//    _moviePlayer.controlStyle   =   MPMovieControlStyleEmbedded;
-//    [self.view addSubview:_moviePlayer.view];
-//    _moviePlayer.contentURL = [NSURL fileURLWithPath:exportPath];
-//    [_moviePlayer play];
-    
-    //play video view
-    filterView = [[GPUImageView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x,self.view.bounds.origin.y+64, self.view.bounds.size.width, self.view.bounds.size.height/2)];
-    filterView.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:filterView];
-    movieFile = [[GPUImageMovie alloc] initWithURL:[NSURL fileURLWithPath:exportPath]];
-    //alloc fitler add fitler
-    GPUImageFilter* fitler = [[GPUImageSepiaFilter alloc] init];
-    [self setupFitler:fitler];
-    
     //navgationRightitem saveitem to write video to phone ablum
     UIBarButtonItem *rightItem  =   [[UIBarButtonItem alloc]initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(fitlerBegain_click)];
     self.navigationItem.rightBarButtonItem  =   rightItem;
     
+    NSString* videoName = @"MixedVideo.mov";
+    NSString *exportPath = [NSTemporaryDirectory() stringByAppendingPathComponent:videoName];
+
+    //play video view
+    filterView = [[GPUImageView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x,self.view.bounds.origin.y+64, self.view.bounds.size.width, self.view.bounds.size.height/2)];
+    filterView.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:filterView];
     
+//    AVPlayerItem    *playerItem = [AVPlayerItem playerItemWithURL:[NSURL fileURLWithPath:exportPath]];
+//    _avplayer   = [AVPlayer playerWithPlayerItem:playerItem];
+    
+    movieFile = [[GPUImageMovie alloc] initWithURL:[NSURL fileURLWithPath:exportPath]];
+    
+    //alloc fitler add fitler
+    GPUImageFilter* fitler = [[GPUImageSepiaFilter alloc] init];
+    [self setupFitler:fitler];
+   
     FilterChooseView * chooseView = [[FilterChooseView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(filterView.frame), self.view.frame.size.width, 100)];
     chooseView.backback = ^(GPUImageFilter * filter){
         [self choose_callBack:filter];
@@ -68,23 +64,27 @@
 #pragma mark 选择滤镜
 -(void)choose_callBack:(GPUImageFilter *)filter
 {
-    pixellateFilter = filter;
-    [movieFile cancelProcessing];
-    [movieFile removeAllTargets];
-    [movieFile addTarget:pixellateFilter];
-    [pixellateFilter addTarget:filterView];
-    [movieFile startProcessing];
+    
+    _avplayer   =   nil;
+    [self setupFitler:filter];
+   
 }
 #pragma mark set fitler and movieFile
 - (void)setupFitler:(GPUImageFilter*)fitler{
-    pixellateFilter =   fitler;
+  
     [movieFile cancelProcessing];
     [movieFile removeAllTargets];
+    [movieFile removeTarget:pixellateFilter];
+    pixellateFilter =   fitler;
     [movieFile addTarget:pixellateFilter];
     [pixellateFilter addTarget:filterView];
-//    movieFile.playAtActualSpeed = YES;
+    movieFile.playAtActualSpeed = YES;
     movieFile.shouldRepeat = YES;
     [movieFile startProcessing];
+    
+    AVPlayerItem    *playerItem = [AVPlayerItem playerItemWithURL:movieFile.url];
+    _avplayer   = [AVPlayer playerWithPlayerItem:playerItem];
+    [_avplayer play];
 }
 
 
@@ -92,6 +92,7 @@
 -(void)fitlerBegain_click
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
         NSString *outPutPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"Movie.mov"];
@@ -113,23 +114,31 @@
         
         movieWriter.shouldPassthroughAudio = YES;
 //        movieWriter.hasAudioTrack   =   YES;
-//        movieFile.audioEncodingTarget = movieWriter;
+        movieFile.audioEncodingTarget = movieWriter;
         [movieFile enableSynchronizedEncodingUsingMovieWriter:movieWriter];
         [movieWriter startRecording];
         
         __weak PlayViewController * weakSelf = self;
-        __weak GPUImageOutput<GPUImageInput> * weakpixellateFilter = pixellateFilter;
+        __weak GPUImageFilter * weakpixellateFilter = pixellateFilter;
         __weak GPUImageMovieWriter * weakmovieWriter = movieWriter;
-        __weak NSURL    *waakOutputurl  =   outPutUrl;
+        __weak NSURL    * weakOutputurl  =   outPutUrl;
+        
+        
         [movieWriter setCompletionBlock:^{
             NSLog(@"视频合成结束");
+          
+            
             dispatch_async(dispatch_get_main_queue(), ^{
+                
+                
                 [MBProgressHUD hideAllHUDsForView:weakSelf.view animated:YES];
-                [weakSelf writeVideoToPhotoLibrary:waakOutputurl];
+//                [weakSelf writeVideoToPhotoLibrary:weakOutputurl];
                 
             });
+            
             [weakpixellateFilter removeTarget:weakmovieWriter];
             [weakmovieWriter finishRecording];
+        
         }];
         
     });
